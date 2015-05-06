@@ -74,8 +74,11 @@ class SI1145:
 		"Read UV index data from sensor (UV index * 100)"	
 		
 		rawData = self.i2c.readU16(0x2C)
-				
-		return rawData
+		
+		if rawData > 0x0258:
+			return 0x0258
+		else:
+			return rawData
 
 	def readAmbientLight(self):
 		"Read Ambient Light data from sensor (Visible light + IR) in lux"
