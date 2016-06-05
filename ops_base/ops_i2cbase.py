@@ -8,10 +8,12 @@ import smbus
 # ===========================================================================
 
 class I2CBase :
+
+        I2C_BUS_DEFAULT = 1
  
-	def __init__(self, address):
+	def __init__(self, address, bus = I2C_BUS_DEFAULT):
 		self.address = address
-		self.bus = smbus.SMBus(1)
+		self.bus = smbus.SMBus(bus)
 
 	def reverseByteOrder(self, data):
 		"Reverses the byte order of an int (16-bit) or long (32-bit) value"
