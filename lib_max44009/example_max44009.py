@@ -18,6 +18,6 @@ max44009.reset()
 for _ in range(100):
         light = max44009.readLight()
 
-	print("light: %.2f lux" % light)
+        print("light: %.2f lux" % light)
 
-	time.sleep(1)
+        time.sleep(1)
